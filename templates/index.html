@@ -1,9 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Boggle</title>
     <link rel="stylesheet" href="/static/styles.css" />
   </head>
@@ -27,18 +24,20 @@
         in {{ nplays }} plays
       </p>
 
-      <p>
-        Score: <b class="score">0</b> Seconds Remaining: <b class="timer"></b>
-      </p>
+      <p>Score: <b class="score">0</b> Seconds Left: <b class="timer"></b></p>
 
       <form method="POST" class="add-word">
         <input name="word" class="word" autofocus />
         <button>Enter</button>
       </form>
 
-      <p class="msg"></p>
+      <p class="msg">
+        <!-- our JS will put messages here dynamically -->
+      </p>
 
-      <ul class="words"></ul>
+      <ul class="words">
+        <!-- our JS will words here as they score -->
+      </ul>
     </section>
     <script src="http://unpkg.com/jquery"></script>
     <script src="https://unpkg.com/axios@0.19.0/dist/axios.js"></script>
