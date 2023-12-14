@@ -43,16 +43,22 @@ class BoggleGame {
     if (!word) return;
 
     if (this.words.has(word)) {
-      this.showMessage(`Already found ${word}`, "err");
+      this.showMessage(`Already found "${word}"! Try again. `, "err");
       return;
     }
 
     // check server for validity
     const resp = await axios.get("/check-word", { params: { word: word } });
     if (resp.data.result === "not-word") {
-      this.showMessage(`${word} is not a valid English word`, "err");
+      this.showMessage(
+        `Doh! "${word}" is not an English word. Try again.`,
+        "err"
+      );
     } else if (resp.data.result === "not-on-board") {
-      this.showMessage(`${word} is not a valid word on this board`, "err");
+      this.showMessage(
+        `Seriously?! "${word}" is not a valid word on this board. Try again.`,
+        "err"
+      );
     } else {
       this.showWord(word);
       this.score += word.length;
@@ -88,9 +94,9 @@ class BoggleGame {
     $(".add-word", this.board).hide();
     const resp = await axios.post("/post-score", { score: this.score });
     if (resp.data.brokeRecord) {
-      this.showMessage(`New record: ${this.score}`, "ok");
+      this.showMessage(`Heck Yeah!! New record: ${this.score}`, "ok");
     } else {
-      this.showMessage(`Final score: ${this.score}`, "ok");
+      this.showMessage(`Nicely done!! Final score: ${this.score}`, "ok");
     }
   }
 }

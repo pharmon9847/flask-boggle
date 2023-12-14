@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="/static/boggle.css" />
   </head>
   <body>
+    <h1 id="boggle-title">Boggle</h1>
+
     <section id="boggle">
       <table class="board">
         <tbody>
@@ -29,6 +31,9 @@
       <form method="POST" class="add-word">
         <input name="word" class="word" autofocus />
         <button>Enter</button>
+      </form>
+      <form action="/start" id="restart-form">
+        <button id="restart-btn" class="hidden">Restart</button>
       </form>
 
       <p class="msg">

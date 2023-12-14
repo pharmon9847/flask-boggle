@@ -1,5 +1,6 @@
 .board {
-  border: solid 1px black;
+  margin-left: auto;
+  margin-right: auto;
   font-family: monospace;
   font-weight: bold;
   font-size: 200%;
@@ -7,8 +8,12 @@
 
 .board td {
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
   width: 1.5em;
   height: 1.5em;
+  border: 4px solid orange;
+  box-shadow: 0 4px 6px black;
 }
 
 .msg {
@@ -16,11 +21,57 @@
 }
 
 .msg.ok {
-  color: white;
+  color: orangered;
   background-color: green;
+  font-weight: bold;
+  font-size: large;
 }
 
 .msg.err {
-  color: white;
-  background-color: tomato;
+  color: black;
+  background-color: red;
+  font-weight: bold;
+  font-size: large;
+}
+
+#boggle-title {
+  text-align: center;
+  font-size: 4rem;
+  margin: 0.5rem;
+  text-decoration: underline;
+  font-family: "American Typewriter", serif;
+}
+
+p {
+  text-align: center;
+}
+
+.add-word {
+  text-align: center;
+}
+
+#restart-form {
+  text-align: center;
+  padding: 0.3em;
+}
+button,
+#restart-btn {
+  text-align: center;
+  margin: 0 auto;
+  background-color: #dae6d5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 2px solid #333;
+  border-radius: 6px;
+  padding: 0.3em;
+}
+
+button:hover,
+#restart-btn:hover {
+  background-color: #ffcc00;
+  cursor: pointer;
+}
+
+button:active,
+#restart-btn:active {
+  transform: translateY(2px);
 }
