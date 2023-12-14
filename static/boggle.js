@@ -64,7 +64,7 @@ class BoggleGame {
       this.score += word.length;
       this.showScore();
       this.words.add(word);
-      this.showMessage(`Added: ${word}`, "ok");
+      this.showMessage(`Well played! Just added: "${word}"`, "ok");
     }
 
     $word.val("").focus();
